@@ -4,7 +4,7 @@ import axios from "axios";
 function App() {
   const [campaigns, setCampaigns] = useState<any[]>([]);
   const [form, setForm] = useState({ title: "", description: "", budget: 0 });
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = "/api";
 
   useEffect(() => {
     axios.get(`${API_URL}/campaigns`).then(res => setCampaigns(res.data));
