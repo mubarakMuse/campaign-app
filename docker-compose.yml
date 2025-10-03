@@ -26,16 +26,16 @@ services:
       - ./backend/src:/app/src
       - /app/node_modules
       - /app/dist
-
+      
   frontend:
     build:
       context: ./frontend
-      args:
-        VITE_API_URL: http://18.223.30.56:4000
     ports:
       - "3000:80"
     depends_on:
       - backend
+    environment:
+      VITE_API_URL: /api
 
 volumes:
   postgres_data:
